@@ -15,5 +15,14 @@ class Bone:
         return(self.parent_joint)
     
     #יחזיר את הנקודה הסופית של החלק המסויים באיבר
-    def get_end_Point():
-        
+    def get_end_Point(self):
+        return(self.child_joint)
+    
+    #
+    def get_end_Point2(self):
+        x0, y0 = self.get_start()
+        # חישוב פשוט: נקודת הקצה לפי אורך וזווית
+        rad = math.radians(self.angle) #המרת זווית לראדיאנים
+        x_end = x0 + math.cos(rad) * self.length
+        y_end = y0 + math.sin(rad) * self.length
+        return (x_end, y_end)
