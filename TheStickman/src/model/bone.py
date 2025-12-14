@@ -56,3 +56,15 @@ class Bone:
     def get_end_joint(self):
         
         return self.calculate_end_joint_position()
+    
+    
+    def update_angle_and_chain(self, new_angle):
+        self.set_angle(new_angle)
+
+        # הפעלת חישוב המיקום החדש למפרק הסופי של העצם הזו
+        self.calculate_end_joint_position() 
+
+        # אם יש עצם נוספת שמחוברת למפרק הסופי הזה (כמו lower bone), צריך לעדכן גם אותה.
+        # זה דורש לוגיקה ב-Limb או ב-Stickman שתטפל בשרשור.
+        # כרגע, בגלל מבנה ה-Limb שלך, נסתפק בקריאה לפונקציית העדכון של ה-Limb:
+        # (מניח ש-drag.py ידאג לקרוא ל-limb.update_joints_position() לאחר השינוי)
