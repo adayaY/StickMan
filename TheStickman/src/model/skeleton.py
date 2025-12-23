@@ -11,7 +11,7 @@ class Stickman:
         #
         self.core = Joint("core/neck", x=200, y=200)
         #בנייה של הקו המייצג את הבטן
-        self.stomach = Bone("stomach",parent_joint = self.core ,length = 60 ,angel =  270 )
+        self.stomach = Bone("stomach",parent_joint = self.core ,length = 60 ,angle =  90 ) #TODO  CHANG THE ANGLE
         # הראש יכול להיות עצם אחת
         self.head = Head( self.core)
 
